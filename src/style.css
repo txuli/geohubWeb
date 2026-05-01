@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #000000;
+  --color-secondary: #111111;
+  --color-accent: #6365f1;
+  --font-serif: "DM Serif Display", serif;
+  --font-sans: "Syne", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+    html {                                                  
+      scroll-behavior: smooth;
+    }
+  }
+}

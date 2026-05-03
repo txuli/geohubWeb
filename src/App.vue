@@ -2,6 +2,7 @@
 import Header from './components/header.vue'
 import MainTitle from './components/mainTitle.vue'
 import Stats from './components/stats.vue'
+import Terminal from './components/terminal.vue'
 </script>
 
 <template class="">
@@ -12,8 +13,9 @@ import Stats from './components/stats.vue'
     <div class="relative z-10 flex min-h-screen flex-col bg-[#0f0f20]/30">
       <Header />
       <MainTitle/>
-    
+      <Terminal/>
       <Stats/>
+      
     </div>
   </div>
 </template>

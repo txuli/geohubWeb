@@ -1,21 +1,22 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-let domain = 'api.geohub.pm/'
+import { API_BASE } from '@/config'
+const domain = API_BASE.replace('https://', '') + '/'
 const response = ref(null)
 const endpoint = ref<string | null>(null)
 onMounted(async () => {
   const number = Math.floor(Math.random() * 3)
   switch (number) {
     case 0:
-      response.value = await (await fetch("/api/nearme")).json()
+      response.value = await (await fetch(`${API_BASE}/nearme`)).json()
       endpoint.value = domain + 'nearme'
       break
     case 1:
-      response.value = await (await fetch("/api/getCountry?country=Spain")).json()
+      response.value = await (await fetch(`${API_BASE}/getCountry?country=Spain`)).json()
       endpoint.value = domain + 'getCountry?country=Spain'
       break
     case 2:
-       response.value = await (await fetch("/api/getCity?city=valencia&country=spain")).json()
+      response.value = await (await fetch(`${API_BASE}/getCity?city=valencia&country=spain`)).json()
        endpoint.value = domain + 'getCity?city=valencia&country=spain'
   }
 })

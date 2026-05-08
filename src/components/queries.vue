@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue'
 import { requestStore } from '@/store/requests'
+import { API_BASE } from '@/config'
 
 const request = requestStore()
 
@@ -71,7 +72,7 @@ const suggestions = ref<string[]>([])
 onMounted(loadSuggestions)
 
 async function loadSuggestions() {
-  const data = await (await fetch('/api/getRandomCountry?limit=6')).json() as { country?: string }[]
+  const data = await (await fetch(`${API_BASE}/getRandomCountry?limit=6`)).json() as { country?: string }[]
   suggestions.value = data.map(d => d.country ?? '').filter(Boolean)
 }
 
@@ -88,7 +89,7 @@ async function sendRequest() {
     if (val) params.set(p.name, val)
   }
   const qs = params.toString()
-  const url = `/api${selected.value.path}${qs ? '?' + qs : ''}`
+  const url = `${API_BASE}${selected.value.path}${qs ? '?' + qs : ''}`
   const res = await fetch(url)
   request.status = String(res.status)
   request.response = await res.json()

@@ -48,13 +48,13 @@ const highlighted = computed(() => {
 <template>
   <div class="flex justify-center lg:w-full w-96 mx-auto mb-16">
     <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-md mt-2  w-full max-w-4xl">
-      <div class="relative w-full h-10 flex items-center px-2 border-b border-indigo-600/20">
+      <div class="relative w-full  flex items-center px-2 border-b border-indigo-600/20">
         <div class="flex space-x-1">
           <div class="h-3 w-3 rounded-full bg-red-700 hover:animate-breathing"></div>
           <div class="h-3 w-3 rounded-full bg-yellow-500 hover:animate-breathing"></div>
           <div class="h-3 w-3 rounded-full bg-green-700 hover:animate-breathing"></div>
         </div>
-        <div class="ml-5 text-sm border border-indigo-600/20 font-sans bg-[#161630] rounded-sm px-2 py-1">{{ endpoint }}
+        <div class="ml-5 text-sm border border-indigo-600/20 font-sans bg-[#161630] rounded-sm px-2 py-1 m-2">{{ endpoint }}
         </div>
         <button
           v-if="response"

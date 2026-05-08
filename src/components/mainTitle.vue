@@ -5,12 +5,12 @@
       style="background: radial-gradient(ellipse, rgba(99,102,241,0.15) 0%, transparent 70%)"
     />
 
-    <div class="relative z-10 flex items-center gap-2 border border-white/20 bg-white/6 rounded-full px-4 py-1.5 text-sm text-white/70 mb-10 fade-up" style="animation-delay: 0ms">
+    <div class="select-none relative z-10 flex items-center gap-2 border border-white/20 bg-white/6 rounded-full px-4 py-1.5 text-sm text-white/70 mb-10 fade-up" style="animation-delay: 0ms">
       <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
       NOW LIVE
     </div>
 
-    <div class="relative z-10 mb-6 fade-up" style="animation-delay: 100ms">
+    <div class="relative z-10 mb-6 fade-up select-none" style="animation-delay: 100ms">
       <h1 class="text-5xl sm:text-7xl font-bold font-serif text-white leading-tight">
         Every country.
       </h1>

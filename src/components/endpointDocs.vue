@@ -20,7 +20,7 @@ const endpoints: Endpoint[] = [
   {
     path: '/getCountry',
     description: 'Returns full data for a single country matching the given name.',
-    example: 'https://geohub.pm/getCountry?country=Spain',
+    example: 'https://api.geohub.pm/getCountry?country=Spain',
     params: [
       { name: 'country', type: 'string', required: true, description: 'Name of the country (case-insensitive).' }
     ]
@@ -28,13 +28,13 @@ const endpoints: Endpoint[] = [
   {
     path: '/getCountries',
     description: 'Returns all countries in the database.',
-    example: 'https://geohub.pm/getCountries',
+    example: 'https://api.geohub.pm/getCountries',
     params: []
   },
   {
     path: '/getRandomCountry',
     description: 'Returns one or more random countries.',
-    example: 'https://geohub.pm/getRandomCountry?limit=3',
+    example: 'https://api.geohub.pm/getRandomCountry?limit=3',
     params: [
       { name: 'limit', type: 'number', required: false, description: 'Number of countries to return.', default: '1 (max 50)' }
     ]
@@ -42,7 +42,7 @@ const endpoints: Endpoint[] = [
   {
     path: '/getCity',
     description: 'Returns cities filtered by country and optional criteria. Fetches missing data from Wikipedia automatically.',
-    example: 'https://geohub.pm/getCity?country=Spain&city=Madrid&minPopulation=100000',
+    example: 'https:/api./geohub.pm/getCity?country=Spain&city=Madrid&minPopulation=100000',
     params: [
       { name: 'country', type: 'string', required: true, description: 'Filter cities by country name.' },
       { name: 'city', type: 'string', required: false, description: 'Filter by city name.' },
@@ -55,7 +55,7 @@ const endpoints: Endpoint[] = [
   {
     path: '/getrandomCity',
     description: 'Returns one or more random cities.',
-    example: 'https://geohub.pm/getrandomCity?limit=5',
+    example: 'https://api.geohub.pm/getrandomCity?limit=5',
     params: [
       { name: 'limit', type: 'number', required: false, description: 'Number of cities to return.', default: '1 (max 50)' }
     ]
@@ -63,7 +63,7 @@ const endpoints: Endpoint[] = [
   {
     path: '/nearme',
     description: 'Returns up to 5 cities closest to your IP-based location.',
-    example: 'https://geohub.pm/nearme?max=50000',
+    example: 'https://api.geohub.pm/nearme?max=50000',
     params: [
       { name: 'max', type: 'number', required: false, description: 'Search radius in meters.', default: '100000' }
     ]
@@ -95,7 +95,7 @@ function toggle(path: string) {
           <span class="text-[10px] text-white/25 hidden sm:inline">— {{ ep.description }}</span>
         </div>
         <span
-          class="text-[#818cf8]/40 text-xs transition-transform duration-200"
+          class="text-[#818cf8]/40 text-xs transition-transform duration-200 select-none"
           :class="open === ep.path ? 'rotate-180' : ''"
         >▾</span>
       </button>

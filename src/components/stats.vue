@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section class="flex w-full mx-auto items-center justify-center border-y border-gray-500/20 bg-[#0F0F20]/40">
+  <section class="flex w-full mx-auto items-center justify-center border-y border-gray-500/20 bg-[#0F0F20]/40 select-none">
     <div class="border-r border-gray-500/20 px-6 sm:px-16 md:px-30 text-xl sm:text-2xl h-20 sm:h-30 flex flex-col justify-center items-center text-center flex-1">
         <div class="text-[#818cf8]">250</div>
         <div class="text-white/50 text-xs sm:text-sm">countries</div>

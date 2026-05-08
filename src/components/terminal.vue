@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+
+const copied = ref(false)
+const copy = () => {
+  if (!response.value) return
+  navigator.clipboard.writeText(JSON.stringify(response.value, null, 2))
+  copied.value = true
+  setTimeout(() => (copied.value = false), 2000)
+}
 import { API_BASE } from '@/config'
 const domain = API_BASE.replace('https://', '') + '/'
 const response = ref(null)
@@ -17,13 +25,13 @@ onMounted(async () => {
       break
     case 2:
       response.value = await (await fetch(`${API_BASE}/getCity?city=valencia&country=spain`)).json()
-       endpoint.value = domain + 'getCity?city=valencia&country=spain'
+      endpoint.value = domain + 'getCity?city=valencia&country=spain'
   }
 })
 
 const highlighted = computed(() => {
   if (!response.value) return ''
-  return JSON.stringify(response.value)
+  return JSON.stringify(response.value, null, 2)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, (match) => {
       if (/^"/.test(match)) {
@@ -48,12 +56,37 @@ const highlighted = computed(() => {
         </div>
         <div class="ml-5 text-sm border border-indigo-600/20 font-sans bg-[#161630] rounded-sm px-2 py-1">{{ endpoint }}
         </div>
+        <button
+          v-if="response"
+          @click="copy"
+          class="ml-auto text-xs font-mono px-2 py-1 rounded border transition-colors duration-200"
+          :class="copied
+            ? 'border-green-500/40 text-green-400 bg-green-500/10'
+            : 'border-indigo-600/20 text-indigo-400 hover:text-indigo-300 hover:border-indigo-500/40'"
+        >{{ copied ? 'copied!' : 'copy' }}</button>
       </div>
 
-      <div class="p-4">
-        <div v-if="response" class="text-sm font-mono leading-relaxed break-all" v-html="highlighted"></div>
+      <div class="p-4 h-90 overflow-auto terminal-scroll">
+        <div v-if="response" class="text-sm font-mono leading-relaxed whitespace-pre-wrap" v-html="highlighted"></div>
         <span v-else class="text-gray-600 text-sm font-mono">loading...</span>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.terminal-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.terminal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 9999px;
+}
+.terminal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+</style>

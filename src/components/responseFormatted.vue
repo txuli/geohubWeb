@@ -15,7 +15,8 @@ const lifeExpectancy = computed(() => request.response?.lifeExpectancy?.toFixed(
 </script>
 
 <template>
-  <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-lg w-full md:w-1/2 overflow-hidden font-terminal">
+  <Transition name="panel">
+  <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-lg w-full md:w-1/2 overflow-hidden font-terminal" v-if="request.status">
 
     <!-- Header row -->
     <div class="flex items-start gap-4 p-5 border-b border-indigo-600/10">
@@ -29,7 +30,7 @@ const lifeExpectancy = computed(() => request.response?.lifeExpectancy?.toFixed(
     </div>
 
     <!-- Data grid -->
-    <div class="grid grid-cols-2 gap-px bg-indigo-600/10 border-t border-indigo-600/10">
+    <div class="grid grid-cols-1 gap-px bg-indigo-600/10 border-t border-indigo-600/10">
 
       <div class="bg-[#0F0F20] px-4 py-3">
         <div class="text-[9px] text-[#818cf8]/40 tracking-[0.2em] uppercase mb-1">Capital</div>
@@ -59,4 +60,15 @@ const lifeExpectancy = computed(() => request.response?.lifeExpectancy?.toFixed(
 
     </div>
   </div>
+  </Transition>
 </template>
+
+<style scoped>
+.panel-enter-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.panel-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+</style>

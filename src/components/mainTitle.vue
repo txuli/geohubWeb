@@ -7,7 +7,7 @@
     />
 
   
-    <div class="relative z-10 flex items-center gap-2 border border-white/20 bg-white/[0.06] rounded-full px-4 py-1.5 text-sm text-white/70 mb-10">
+    <div class="relative z-10 flex items-center gap-2 border border-white/20 bg-white/6 rounded-full px-4 py-1.5 text-sm text-white/70 mb-10">
       <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
        NOW LIVE
     </div>

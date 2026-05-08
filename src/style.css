@@ -7,6 +7,7 @@
   --color-accent: #6365f1;
   --font-serif: "DM Serif Display", serif;
   --font-sans: "Syne", sans-serif;
+  --font-terminal: "Share Tech Mono", monospace;
 }
 
 @layer base {

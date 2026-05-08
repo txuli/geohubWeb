@@ -22,7 +22,7 @@ onMounted(async () => {
 
 const highlighted = computed(() => {
   if (!response.value) return ''
-  return JSON.stringify(response.value, null, 2)
+  return JSON.stringify(response.value)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, (match) => {
       if (/^"/.test(match)) {
@@ -50,7 +50,7 @@ const highlighted = computed(() => {
       </div>
 
       <div class="p-4">
-        <pre v-if="response" class="text-sm font-mono leading-relaxed overflow-auto" v-html="highlighted"></pre>
+        <div v-if="response" class="text-sm font-mono leading-relaxed break-all" v-html="highlighted"></div>
         <span v-else class="text-gray-600 text-sm font-mono">loading...</span>
       </div>
     </div>

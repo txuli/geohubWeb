@@ -2,6 +2,9 @@
 
 Frontend for the [GeoHub API](https://api.geohub.pm) — an interactive explorer and documentation portal for geographic data on countries and cities worldwide.
 
+[![API Repository](https://img.shields.io/badge/API-txuli%2Fgeohub--api-181717?logo=github&logoColor=white)](https://github.com/txuli/geohub-api)
+
+
 ## Features
 
 - **Live API Explorer** — test all endpoints in real time with syntax-highlighted JSON responses

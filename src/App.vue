@@ -8,6 +8,8 @@ import Queries from './components/queries.vue'
 import Response from './components/response.vue'
 import ResponseFormatted from './components/responseFormatted.vue'
 import ResponseFormattedCity from './components/responseFormattedCity.vue'
+import EndpointDocs from './components/endpointDocs.vue'
+import Footer from './components/footer.vue'
 import { requestStore } from './store/requests'
 const request = requestStore()
 </script>
@@ -25,15 +27,22 @@ const request = requestStore()
 
       <Terminal />
       <Stats />
-      <section class="w-4/6 mx-auto m-30">
+      <section class="w-full px-4 sm:px-8 md:w-5/6 lg:w-4/6 mx-auto my-16">
         <Title title="LIVE EXPLORER" />
         <Queries/>
-       <div class="flex justify-between w-full">
-         <Response/>
-         <ResponseFormatted v-if="!request.responseType || request.responseType === 'country'" />
-         <ResponseFormattedCity v-else />
-       </div>
+        <div class="flex flex-col md:flex-row gap-4 w-full mt-6">
+          <Response/>
+          <ResponseFormatted v-if="!request.responseType || request.responseType === 'country'" />
+          <ResponseFormattedCity v-else />
+        </div>
+        <div class="mt-16">
+          <Title title="ENDPOINTS" />
+          <div class="mt-4">
+            <EndpointDocs />
+          </div>
+        </div>
       </section>
+      <Footer />
     </div>
   </div>
 </template>

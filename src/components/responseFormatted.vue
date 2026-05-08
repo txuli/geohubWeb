@@ -15,7 +15,7 @@ const lifeExpectancy = computed(() => request.response?.lifeExpectancy?.toFixed(
 </script>
 
 <template>
-  <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-lg w-1/2 mx-auto overflow-hidden font-terminal">
+  <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-lg w-full md:w-1/2 overflow-hidden font-terminal">
 
     <!-- Header row -->
     <div class="flex items-start gap-4 p-5 border-b border-indigo-600/10">

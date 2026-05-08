@@ -21,7 +21,7 @@ const highlighted = computed(() => {
 </script>
 
 <template>
-  <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-md w-1/2 max-w-4xl mx-auto mr-5">
+  <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-md w-full md:w-1/2">
     <div class="relative w-full h-10 flex items-center px-2 border-b border-indigo-600/20 justify-between">
       <div class="ml-2 text-sm px-2 py-1 text-white/40">
        response

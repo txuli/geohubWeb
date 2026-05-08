@@ -8,10 +8,8 @@
                 GeoHub
             </h1>
             <div class="my-auto">
-                    <a class="my-auto mx-5 font-syne text-[#4C515E] hover:text-white transition-all hover:cursor-pointer z-10" href="#LIVE EXPLORER">Explore</a>
-                    <a class="my-auto mx-5 font-syne text-[#4C515E] hover:text-white transition-all hover:cursor-pointer z-10"href="">Docs</a>
-                    <a class="my-auto mx-5 font-syne text-[#4C515E] hover:text-white transition-all hover:cursor-pointer z-10"href="">Features</a>
-                    
+                    <a class="my-auto mx-5 font-syne text-[#4C515E] hover:text-white transition-all hover:cursor-pointer z-10" href="#live-explorer">Explore</a>
+                    <a class="my-auto mx-5 font-syne text-[#4C515E] hover:text-white transition-all hover:cursor-pointer z-10" href="#endpoints">Docs</a>
             </div>
         </nav>
   </header>

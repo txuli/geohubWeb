@@ -10,11 +10,12 @@
   --font-terminal: "Share Tech Mono", monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   body {
     @apply bg-black text-white;
-    html {                                                  
-      scroll-behavior: smooth;
-    }
   }
 }

@@ -103,7 +103,7 @@ const hasCountryParam = (ep: Endpoint) => ep.params.some(p => p.name === 'countr
 <template>
   <div class="space-y-6">
     <div>
-      <h2 class="text-6xl font-serif">Test it now!</h2>
+      <h2 class="text-4xl md:text-6xl font-serif">Test it now!</h2>
       <p class="text-white/50 mt-1">Search any country or city and see the response instantly.</p>
     </div>
 
@@ -124,11 +124,11 @@ const hasCountryParam = (ep: Endpoint) => ep.params.some(p => p.name === 'countr
 
     <!-- Selected endpoint info -->
     <div class="border border-indigo-600/15 bg-[#161630]/40 rounded-md px-4 py-3 space-y-4">
-      <div class="flex items-center gap-3">
+      <div class="flex flex-wrap items-center gap-2">
         <span class="font-terminal text-[10px] text-[#818cf8]/40 tracking-widest uppercase">GET</span>
         <span class="font-terminal text-sm text-[#34d399]">{{ selected.path }}</span>
-        <span class="font-terminal text-[10px] text-white/20">—</span>
-        <span class="font-terminal text-[10px] text-white/30">{{ selected.description }}</span>
+        <span class="font-terminal text-[10px] text-white/20 hidden sm:inline">—</span>
+        <span class="font-terminal text-[10px] text-white/30 hidden sm:inline">{{ selected.description }}</span>
       </div>
 
       <!-- Params -->

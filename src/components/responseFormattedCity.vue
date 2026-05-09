@@ -25,7 +25,7 @@ const countryName = computed(() => {
 
 <template>
   <Transition name="panel">
-  <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-lg w-full md:w-1/2 overflow-hidden font-terminal">
+  <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-lg w-full md:w-1/2 overflow-hidden font-terminal" v-if="request.endpoint != '/nearme' ">
 
     <!-- Header row -->
     <div class="flex items-start gap-4 p-5 border-b border-indigo-600/10">

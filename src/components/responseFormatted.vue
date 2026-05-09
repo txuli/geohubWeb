@@ -12,11 +12,12 @@ const lat = computed(() => request.response?.lat?.toFixed(4) ?? '')
 const lon = computed(() => request.response?.lon?.toFixed(4) ?? '')
 const population = computed(() => request.response?.population?.toLocaleString('en') ?? '')
 const lifeExpectancy = computed(() => request.response?.lifeExpectancy?.toFixed(1) ?? '')
+
 </script>
 
 <template>
   <Transition name="panel">
-  <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-lg w-full md:w-1/2 overflow-hidden font-terminal" v-if="request.status">
+  <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-lg w-full md:w-1/2 overflow-hidden font-terminal" v-if="request.status && request.response && !Array.isArray(request.response) && request.responseType === 'country'">
 
     <!-- Header row -->
     <div class="flex items-start gap-4 p-5 border-b border-indigo-600/10">

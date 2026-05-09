@@ -96,6 +96,7 @@ async function sendRequest() {
   request.endpoint = selected.value.path
   request.selection = paramValues['country'] ?? ''
   request.responseType = selected.value.category
+  console.log(request.response)
 }
 
 const hasCountryParam = (ep: Endpoint) => ep.params.some(p => p.name === 'country')

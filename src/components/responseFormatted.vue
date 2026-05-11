@@ -20,11 +20,11 @@ const lifeExpectancy = computed(() => request.response?.lifeExpectancy?.toFixed(
   <div class="border border-indigo-600/20 bg-[#0F0F20] rounded-lg w-full md:w-1/2 overflow-hidden font-terminal" v-if="request.status && request.response && !Array.isArray(request.response) && request.responseType === 'country'">
 
     <!-- Header row -->
-    <div class="flex items-start gap-4 p-5 border-b border-indigo-600/10">
-      <div class="text-5xl leading-none text-white/80 min-w-[3.5rem]">
-        {{ iso2 }}
+    <div class="flex items-center gap-4 p-5 border-b border-indigo-600/10">
+      <div class="leading-none flex">
+         <country-flag :country="iso2" size="big" class="rounded-md"/>
       </div>
-      <div class="flex flex-col justify-center pt-1">
+      <div class="flex flex-col justify-center">
         <div class="font-serif text-xl text-white/90 leading-tight">{{ name }}</div>
         <div class="text-[10px] text-[#818cf8]/50 tracking-[0.2em] uppercase mt-1">{{ continentLabel || continent }}</div>
       </div>
